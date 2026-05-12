@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GET INSPIRED — Cannes Lions 2026</title>
+  <meta name="description" content="GET INSPIRED is a first-of-its-kind impact initiative at Cannes Lions 2026. Hosted by FMC × FBRC.ai. June 22–26, French Riviera." />
+  <meta property="og:title" content="GET INSPIRED — Cannes Lions 2026" />
+  <meta property="og:description" content="A first-of-its-kind impact initiative at Cannes Lions 2026. We're giving away $500K for you to donate to the charity of your choice on INSPIRED.com." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5EFE6;
+      --cream-dark: #EDE5D8;
+      --ink: #1A1814;
+      --ink-soft: #4A4640;
+      --gold: #B8965A;
+      --gold-light: #D4AD74;
+      --navy: #1C2B3A;
+      --white: #FDFAF6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────────── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(245, 239, 230, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184, 150, 90, 0.15);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--ink);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .header-cta:hover {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 140px 48px 80px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      color: var(--white);
+      /* Hero photo: Monaco harbour, French Riviera (Todor Andonov / Unsplash). */
+      background:
+        linear-gradient(180deg, rgba(10,14,22,0.55) 0%, rgba(10,14,22,0.35) 35%, rgba(10,14,22,0.85) 100%),
+        url('https://images.unsplash.com/photo-1775822993886-bb598906bca3?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat,
+        var(--navy);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(120% 80% at 50% 0%, transparent 0%, rgba(10,14,22,0.45) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(64px, 13vw, 180px);
+      font-weight: 700;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 28px;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-tagline {
+      max-width: 640px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 400;
+      line-height: 1.35;
+      color: rgba(253, 250, 246, 0.92);
+      margin-bottom: 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 56px;
+    }
+
+    .hero-description {
+      max-width: 520px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(253, 250, 246, 0.78);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 40px;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .hero-date {
+      font-size: 12px;
+      color: rgba(253, 250, 246, 0.65);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Hosted-by lockup */
+    .hosted-by {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(212, 173, 116, 0.25);
+      max-width: 100%;
+    }
+
+    .hosted-by-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(253, 250, 246, 0.5);
+    }
+
+    .hosted-by-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      color: var(--white);
+    }
+
+    .hosted-by-lockup .fmc,
+    .hosted-by-lockup .fbrc,
+    .hosted-by-lockup .inspired { font-weight: 600; }
+    .hosted-by-lockup .inspired { letter-spacing: 0.06em; }
+    .hosted-by-lockup .x {
+      color: var(--gold-light);
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    .hero-rule {
+      position: absolute;
+      bottom: 0;
+      left: 48px;
+      right: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+    }
+
+    /* ─── SECTION BASE ───────────────────────────────────── */
+    section {
+      padding: 100px 48px;
+    }
+
+    /* ─── IMPACT CALLOUT ─────────────────────────────────── */
+    .impact {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .impact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .impact .section-label {
+      color: var(--gold-light);
+    }
+
+    .impact-figure {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(80px, 12vw, 180px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .impact-figure-sub {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(253, 250, 246, 0.55);
+      margin-bottom: 28px;
+    }
+
+    .impact-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .impact-headline em { font-style: italic; color: var(--gold-light); }
+
+    .impact-body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(253, 250, 246, 0.75);
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+
+    .impact-partner {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      border: 1px solid rgba(212, 173, 116, 0.35);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(253, 250, 246, 0.85);
+    }
+
+    .impact-partner strong {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--gold-light);
+      text-transform: none;
+      font-size: 15px;
+    }
+
+    /* ─── AGENDA ──────────────────────────────────────────── */
+    .agenda {
+      background: var(--cream-dark);
+    }
+
+    .agenda-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .agenda-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .agenda-header p {
+      max-width: 420px;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .agenda-card {
+      background: var(--white);
+      border: 1px solid rgba(184, 150, 90, 0.18);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .agenda-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .agenda-day {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .agenda-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 2.2vw, 30px);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .agenda-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    .agenda-aside {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      padding-top: 12px;
+      border-top: 1px dashed rgba(184, 150, 90, 0.35);
+      font-style: italic;
+    }
+
+    .agenda-card.is-feature {
+      background: var(--ink);
+      color: var(--white);
+      border-color: transparent;
+    }
+
+    .agenda-card.is-feature .agenda-title { color: var(--white); }
+    .agenda-card.is-feature .agenda-body { color: rgba(253,250,246,0.75); }
+    .agenda-card.is-feature .agenda-day { color: var(--gold-light); }
+
+    /* ─── EMAIL CTA INLINE ───────────────────────────────── */
+    .email-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184, 150, 90, 0.4);
+      padding-bottom: 4px;
+      transition: color 0.2s, border-color 0.2s;
+      word-break: break-all;
+    }
+
+    .email-cta:hover {
+      color: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4.5vw, 64px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ─── WHAT SECTION ───────────────────────────────────── */
+    .what {
+      background: var(--white);
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .what-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .what-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 60px;
+    }
+
+    .what-lead {
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .what-lead em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .what-details {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .what-item {
+      padding-top: 28px;
+      border-top: 1px solid var(--cream-dark);
+    }
+
+    .what-item-number {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .what-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .what-item p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* ─── WHO SECTION ─────────────────────────────────────── */
+    .who {
+      background: var(--cream);
+    }
+
+    .who-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .who-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .who-header > div { min-width: 0; }
+
+    .who-subtitle {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 6px;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--cream-dark);
+      border: 1px solid var(--cream-dark);
+    }
+
+    .person-card {
+      background: var(--white);
+      padding: 32px 28px;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .person-card:hover {
+      background: var(--ink);
+    }
+
+    .person-card:hover .person-name,
+    .person-card:hover .person-title,
+    .person-card:hover .person-company {
+      color: var(--white);
+    }
+
+    .person-card:hover .person-link {
+      color: var(--gold-light);
+      border-color: rgba(212, 173, 116, 0.3);
+    }
+
+    .person-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      margin-bottom: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .person-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      transition: color 0.2s;
+    }
+
+    .person-title {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ink-soft);
+      margin-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .person-company {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 14px;
+      transition: color 0.2s;
+    }
+
+    .person-bio {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin-bottom: 20px;
+      transition: color 0.2s;
+      min-height: 60px;
+    }
+
+    .person-card:hover .person-bio {
+      color: rgba(253, 250, 246, 0.7);
+    }
+
+    .person-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--cream-dark);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .person-link:hover {
+      color: var(--gold);
+    }
+
+    /* ─── GET INVOLVED ────────────────────────────────────── */
+    .get-involved {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .get-involved-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .get-involved .section-label {
+      color: var(--gold-light);
+    }
+
+    .get-involved .section-label::after {
+      background: var(--gold-light);
+    }
+
+    .get-involved .section-title {
+      color: var(--white);
+    }
+
+    .get-involved-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(253, 250, 246, 0.7);
+      line-height: 1.8;
+      margin-top: 24px;
+    }
+
+    .get-involved-options {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-top: 16px;
+    }
+
+    .involvement-option {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 28px 32px;
+      transition: background 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .involvement-option:hover {
+      background: rgba(184, 150, 90, 0.12);
+      border-color: rgba(184, 150, 90, 0.3);
+    }
+
+    .involvement-option h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .involvement-option p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(253, 250, 246, 0.6);
+      line-height: 1.6;
+    }
+
+    .form-wrapper {
+      margin-top: 48px;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(253, 250, 246, 0.5);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      appearance: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(253, 250, 246, 0.25);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(184, 150, 90, 0.06);
+    }
+
+    .form-group select option {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      background: var(--gold);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: rgba(253, 250, 246, 0.35);
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-logo span {
+      color: var(--gold);
+    }
+
+    .footer-meta {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ─── DIVIDER ─────────────────────────────────────────── */
+    .gold-rule {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      header { padding: 18px 24px; }
+      section { padding: 72px 24px; }
+      .hero { padding: 120px 24px 56px; }
+
+      .what-grid,
+      .get-involved-inner,
+      .impact-inner { grid-template-columns: 1fr; gap: 48px; }
+
+      .agenda-grid { grid-template-columns: 1fr; }
+      .agenda-header { flex-direction: column; align-items: flex-start; }
+
+      .hero-meta { flex-direction: column; align-items: flex-start; }
+      .hero-actions { align-items: flex-start; }
+
+      .hosted-by { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+      .who-header { grid-template-columns: 1fr; gap: 32px; align-items: start; }
+
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 1100px) {
+      .people-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .people-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .person-bio { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">GET <span>INSPIRED</span></a>
+    <a href="#get-involved" class="header-cta">Get involved</a>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Cannes Lions 2026 &nbsp;·&nbsp; June 22–26</div>
+      <h1 class="hero-title">GET<br/><em>INSPIRED</em></h1>
+      <p class="hero-tagline">
+        A first-of-its-kind impact initiative<br/>during Cannes Lions.
+      </p>
+
+      <div class="hero-meta">
+        <div class="hero-actions">
+          <a href="mailto:fmcpartnerships@franchisemediacollective.com?subject=Get%20Inspired%20%E2%80%94%20I%27d%20like%20to%20get%20involved" class="btn-primary">Get involved →</a>
+          <span class="hero-date">Aboard a Super Yacht &nbsp;·&nbsp; French Riviera &nbsp;·&nbsp; June 22–26</span>
+        </div>
+      </div>
+
+      <div class="hosted-by">
+        <span class="hosted-by-label">Hosted by</span>
+        <div class="hosted-by-lockup" aria-label="FMC, FBRC.ai and INSPIRED">
+          <span class="fmc">FMC</span>
+          <span class="x" aria-hidden="true">×</span>
+          <span class="fbrc">FBRC.ai</span>
+          <span class="x" aria-hidden="true">×</span>
+          <span class="inspired">INSPIRED</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <div class="gold-rule"></div>
+
+
+  <!-- IMPACT -->
+  <section class="impact" id="impact">
+    <div class="impact-inner">
+      <div>
+        <div class="section-label">The Initiative</div>
+        <div class="impact-figure">$500K</div>
+        <div class="impact-figure-sub">to causes that matter — chosen by you</div>
+        <p class="impact-body">
+          Get Inspired is a first-of-its-kind impact initiative during Cannes Lions.
+          Every guest aboard is empowered to direct funds toward a charity of their
+          choice on the INSPIRED.com platform — turning the festival's most influential
+          week into measurable, collective good.
+        </p>
+        <div class="impact-partner">
+          <span>Launch media partner</span>
+          <strong>Adweek</strong>
+        </div>
+      </div>
+      <div>
+        <h2 class="impact-headline">
+          Attention becomes <em>action.</em><br/>
+          Culture moves the <em>causes</em> you care about.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="gold-rule"></div>
+
+
+  <!-- AGENDA -->
+  <section class="agenda" id="agenda">
+    <div class="agenda-inner">
+      <div class="agenda-header">
+        <div>
+          <div class="section-label">02 — Agenda</div>
+          <h2 class="section-title">Five days,<br/>one <em>Super Yacht.</em></h2>
+        </div>
+        <p>
+          A focused programme of curated sessions, closed-door conversations, and a
+          signature celebration — all anchored by the week's defining question:
+          how do we move culture forward, on purpose?
+        </p>
+      </div>
+
+      <div class="agenda-grid">
+
+        <div class="agenda-card">
+          <div class="agenda-day">Monday</div>
+          <div class="agenda-title">The Future of Power</div>
+          <p class="agenda-body">
+            AI, attention, influence, and the shifting dynamics reshaping every
+            corner of our industry.
+          </p>
+          <p class="agenda-aside">World Cup matches: Argentina vs. Austria &amp; France vs. Iraq</p>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-day">Tuesday</div>
+          <div class="agenda-title">The New Creative Economy</div>
+          <p class="agenda-body">
+            Creators, brands, monetisation, and the mechanics of cultural relevance
+            in a post-platform world.
+          </p>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-day">Tuesday / Wednesday Evening</div>
+          <div class="agenda-title">Get Inspired Celebration</div>
+          <p class="agenda-body">
+            A curated, invite-only gathering celebrating the collective impact
+            created throughout the week.
+          </p>
+        </div>
+
+        <div class="agenda-card">
+          <div class="agenda-day">Wednesday</div>
+          <div class="agenda-title">Closed-Door Conversations</div>
+          <p class="agenda-body">
+            High-trust, invite-only sessions where leaders discuss what's
+            rarely said publicly.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div class="gold-rule"></div>
+
+
+  <!-- WHAT -->
+  <section class="what" id="what">
+    <div class="what-inner">
+      <div class="section-label">03 — What</div>
+      <div class="what-grid">
+        <div class="what-lead">
+          A space deliberately designed to slow<br/>
+          the pace of Cannes — <em>where the best<br/>
+          conversations happen on the water.</em>
+        </div>
+        <div class="what-details">
+          <div class="what-item">
+            <div class="what-item-number">01</div>
+            <h3>Curated Sessions</h3>
+            <p>Small-group conversations with senior marketers, platform leaders, and emerging creative voices. No stages. No slides. Just dialogue.</p>
+          </div>
+          <div class="what-item">
+            <div class="what-item-number">02</div>
+            <h3>Aboard the Yacht</h3>
+            <p>Set on the Mediterranean across five days of Cannes Lions, the yacht provides a private retreat from the festival floor — with views to match.</p>
+          </div>
+          <div class="what-item">
+            <div class="what-item-number">03</div>
+            <h3>Invite Only</h3>
+            <p>Attendance is limited to ensure every interaction is meaningful. Each guest is personally selected to create the right room.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule"></div>
+
+
+  <!-- WHO -->
+  <section class="who" id="who">
+    <div class="who-inner">
+      <div class="who-header">
+        <div>
+          <div class="section-label">04 — Who</div>
+          <h2 class="section-title">The people<br/>on board</h2>
+        </div>
+        <p class="who-subtitle">
+          A hand-picked group of leaders who shape how brands and
+          culture move — from CMOs to creators, founders to platform builders.
+        </p>
+      </div>
+
+      <div class="people-grid">
+
+        <div class="person-card">
+          <div class="person-avatar">WL</div>
+          <div class="person-name">Will Lee</div>
+          <div class="person-title">CEO</div>
+          <div class="person-company">Adweek</div>
+          <p class="person-bio">Leads the global media brand at the intersection of marketing, media, and technology.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+        <div class="person-card">
+          <div class="person-avatar">AY</div>
+          <div class="person-name">Allison Yazdian</div>
+          <div class="person-title">CEO</div>
+          <div class="person-company">Uscreen</div>
+          <p class="person-bio">Builds the leading video membership platform powering creator-led subscription businesses.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+        <div class="person-card">
+          <div class="person-avatar">RB</div>
+          <div class="person-name">Rich Battista</div>
+          <div class="person-title">Chairman</div>
+          <div class="person-company">Adweek</div>
+          <p class="person-bio">Veteran media executive guiding Adweek's growth across events, data, and content.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+        <div class="person-card">
+          <div class="person-avatar">DM</div>
+          <div class="person-name">Dan Miller</div>
+          <div class="person-title">Managing Partner</div>
+          <div class="person-company">Raine</div>
+          <p class="person-bio">Senior investment leader backing high-growth companies in media, sports, and technology.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+        <div class="person-card">
+          <div class="person-avatar">CD</div>
+          <div class="person-name">Chris Detert</div>
+          <div class="person-title">Co-Founder &amp; CCO</div>
+          <div class="person-company">Influential</div>
+          <p class="person-bio">Drives AI-powered creator and influencer marketing for the world's biggest brands.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+        <div class="person-card">
+          <div class="person-avatar">BI</div>
+          <div class="person-name">Bill Imada</div>
+          <div class="person-title">Chair &amp; Co-Founder</div>
+          <div class="person-company">IW Group</div>
+          <p class="person-bio">Champion of multicultural marketing and community impact for global clients.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+        <div class="person-card">
+          <div class="person-avatar">NW</div>
+          <div class="person-name">Neil Waller</div>
+          <div class="person-title">Co-Founder &amp; CEO</div>
+          <div class="person-company">Whalar</div>
+          <p class="person-bio">Scales a new breed of creator media and marketing company.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+        <div class="person-card">
+          <div class="person-avatar">AG</div>
+          <div class="person-name">Andrew Graham</div>
+          <div class="person-title">Agent &amp; Co-Head of Digital Media</div>
+          <div class="person-company">CAA</div>
+          <p class="person-bio">Represents leading digital creators and media innovators worldwide.</p>
+          <a href="#" class="person-link">LinkedIn ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-rule"></div>
+
+
+  <!-- GET INVOLVED -->
+  <section class="get-involved" id="get-involved">
+    <div class="get-involved-inner">
+
+      <div>
+        <div class="section-label">05 — Get Involved</div>
+        <h2 class="section-title">Want to be<br/>part of it?</h2>
+        <p class="get-involved-desc">
+          There are a few ways to be part of Get Inspired at Cannes Lions 2026 —
+          as a guest, partner, or session host. Space is limited and curated.
+          Reach out and we'll discuss what's right for you.
+        </p>
+        <a href="mailto:fmcpartnerships@franchisemediacollective.com?subject=Get%20Inspired%20%E2%80%94%20I%27d%20like%20to%20get%20involved" class="email-cta" style="margin-top: 8px;">
+          fmcpartnerships@franchisemediacollective.com →
+        </a>
+      </div>
+
+      <div class="form-wrapper">
+        <div class="form-title">Request an invite</div>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First name</label>
+              <input type="text" placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label>Last name</label>
+              <input type="text" placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Work email</label>
+            <input type="email" placeholder="jane@company.com" />
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" placeholder="Your company" />
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <input type="text" placeholder="Your title" />
+          </div>
+          <div class="form-group">
+            <label>I'm interested in</label>
+            <select>
+              <option value="" disabled selected>Select an option</option>
+              <option>Attending as a guest</option>
+              <option>Partnership opportunities</option>
+              <option>Hosting a session</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Submit request</button>
+          <p class="form-note">We review all requests personally. You'll hear from us within a few days.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">GET <span>INSPIRED</span> &nbsp; · &nbsp; FMC × FBRC.ai × INSPIRED</div>
+    <div class="footer-meta">Cannes Lions · June 22–26, 2026 · French Riviera</div>
+    <div class="footer-links">
+      <a href="#impact">Impact</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#what">What</a>
+      <a href="#who">Who</a>
+      <a href="#get-involved">Get Involved</a>
+      <a href="mailto:fmcpartnerships@franchisemediacollective.com">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>

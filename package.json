@@ -1,0 +1,28 @@
+{
+  "name": "get-inspired-cannes",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sync-landing": "mkdir -p public && cp index.html public/landing.html",
+    "predev": "npm run sync-landing",
+    "dev": "next dev",
+    "prebuild": "npm run sync-landing",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "@supabase/supabase-js": "^2.105.3",
+    "resend": "^6.12.3",
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}
