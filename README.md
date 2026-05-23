@@ -1,110 +1,74 @@
-# GET INSPIRED — Cannes Lions 2026
+# Get Inspired — Cannes Lions 2026
 
-A social campaign experience built with Next.js, Higgsfield AI, Resend, and Supabase.
+Landing page for the **Get Inspired** initiative at Cannes Lions 2026 — a 5-day, invite-only programme aboard a super yacht on the French Riviera.
 
-## Quick Start
+## Live structure
+
+Three sections:
+
+1. **Hero** — French Riviera scene, three treatments (Cover / Type-first / Split)
+2. **Agenda** — 5-day programme, two layouts (Editorial / Timeline)
+3. **Request an Invite** — capture form, two layouts (Dispatch / Letterpress)
+
+A floating **Tweaks** panel exposes variation, hero treatment, type pairing, palette, density.
+
+## Files
+
+```
+index.html              Entry point — loads React, Babel, fonts, and the JSX modules
+app.jsx                 Root component, theme/palette + type pairing, Tweaks panel
+sections.jsx            Hero / Agenda / Invite components (all variations)
+riviera.jsx             SVG fallback Riviera scene (currently unused — photo is on)
+tweaks-panel.jsx        Tweaks panel shell + form-control helpers
+
+Inspired (standalone source).html   Source for the offline bundle (rewritten to use
+                                    window.__resources for the Unsplash hero image)
+sections-standalone.jsx             Auto-generated companion for the offline source
+Get Inspired.html                   Pre-built standalone HTML (3.3 MB, fully offline)
+
+assets/                 Local images
+uploads/                Raw uploads (Cannes-Event.jpg)
+```
+
+## Running locally
+
+No build step. Just serve the folder over any static server:
 
 ```bash
-git clone https://github.com/YOUR_ORG/get-inspired-cannes
-cd get-inspired-cannes
-npm install
-cp .env.local.example .env.local
-# Fill in your keys (see below)
-npm run dev
+# Python
+python3 -m http.server 8000
+
+# Or with Node
+npx serve .
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open `http://localhost:8000`. JSX is compiled in-browser by Babel (dev only — fine for previewing, not for production).
 
----
+## The standalone export
 
-## Environment Variables
+`Get Inspired.html` is the same site bundled into a single self-contained HTML file with all assets (fonts, hero photo, scripts) inlined. It works offline and from any file:// URL — useful for sharing or pasting into an email.
 
-Copy `.env.local.example` to `.env.local` and fill in:
+To re-build it after edits:
 
-| Variable | Where to get it |
-|---|---|
-| `ANTHROPIC_API_KEY` | console.anthropic.com |
-| `HIGGSFIELD_API_KEY` | app.higgsfield.ai → Settings → API |
-| `RESEND_API_KEY` | resend.com → API Keys |
-| `RESEND_FROM_EMAIL` | A verified sender domain in Resend |
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project → Settings → API |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase project → Settings → API |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase project → Settings → API |
+1. Edit `sections.jsx` / `app.jsx` / etc. as normal
+2. Re-run the build (see comment in `Inspired (standalone source).html`); current pipeline was a one-shot bundler — if you want a reproducible script, ping me
 
----
+## Notes on production
 
-## Supabase Setup
+This is a designer prototype, not a production build:
 
-1. Create a new project at [supabase.com](https://supabase.com)
-2. Go to **SQL Editor** and run the contents of `supabase-schema.sql`
-3. That creates the `gallery` table with RLS policies
+- **Babel in-browser**: replace with a real bundler (Vite/esbuild) before deploy. Move JSX to compiled JS, drop the Babel script.
+- **Fonts**: currently pulled from Google Fonts; consider self-hosting (`woff2`) and using `font-display: swap`.
+- **Hero image**: currently hot-linked from Unsplash. For production, download and self-host (see `assets/hero-cannes.jpg` as an alternative).
+- **Form submission**: the Invite form is currently a no-op (sets local state). Wire it to your endpoint of choice (Formspree, Netlify Forms, Resend, etc.).
+- **Analytics**: none wired in.
 
----
+## Design system
 
-## Resend Setup
+- **Type pairings**: DM Serif Display + DM Sans (default) / Cormorant Garamond + Geist / Playfair Display + Manrope
+- **Palettes**: Ivory & Brass / Midnight Riviera / Bone & Cobalt
+- All palette colors are defined as CSS custom properties in `app.jsx` (see `PALETTES`)
 
-1. Sign up at [resend.com](https://resend.com)
-2. Add and verify your sending domain (or use `onboarding@resend.dev` for testing)
-3. Create an API key and add it to `.env.local`
+## Credits
 
----
-
-## Deploy to Vercel
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-
-# Set env vars (or do this in the Vercel dashboard)
-vercel env add ANTHROPIC_API_KEY
-vercel env add HIGGSFIELD_API_KEY
-vercel env add RESEND_API_KEY
-vercel env add RESEND_FROM_EMAIL
-vercel env add NEXT_PUBLIC_SUPABASE_URL
-vercel env add NEXT_PUBLIC_SUPABASE_ANON_KEY
-vercel env add SUPABASE_SERVICE_ROLE_KEY
-
-# Production deploy
-vercel --prod
-```
-
-Or connect your GitHub repo in the Vercel dashboard for automatic deploys on push.
-
----
-
-## Project Structure
-
-```
-src/
-  app/
-    page.tsx              # Main experience (hero → flow → result)
-    page.module.css       # All styles
-    globals.css           # Base styles + CSS vars
-    layout.tsx            # Root layout + fonts
-    api/
-      generate/route.ts   # POST: Higgsfield image generation
-      email/route.ts      # POST: Resend email delivery
-      gallery/route.ts    # GET: Supabase gallery fetch
-      charities/route.ts  # GET: Inspired platform charity list
-  lib/
-    supabase.ts           # Supabase client (browser + admin)
-    types.ts              # Shared TypeScript types
-supabase-schema.sql       # Run once in Supabase SQL editor
-```
-
----
-
-## How It Works
-
-1. User picks an inspiration theme → popover asks them to describe it in their words
-2. User picks a charity from the Inspired platform
-3. User optionally takes/uploads a photo
-4. User enters email
-5. `/api/generate` builds a personalised prompt and calls Higgsfield via Claude MCP
-6. The generated image is saved to Supabase `gallery` table
-7. `/api/email` sends a branded email via Resend with the image
-8. Result page shows the image with download + gallery links
-9. Gallery page (`/gallery`) pulls all images from Supabase in real time
+Hosted by **FMC × FBRC.ai × INSPIRED**. Cannes Lions, 22–26 June 2026.
