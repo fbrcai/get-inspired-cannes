@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GET INSPIRED — Cannes Lions 2026</title>
+
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1775822993886-bb598906bca3?auto=format&fit=crop&w=2400&q=80" data-resource-id="heroImg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Manrope:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#0E1B2C">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgsky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1F2E48"/>
+          <stop offset="0.55" stop-color="#A56F62"/>
+          <stop offset="0.92" stop-color="#F4D199"/>
+          <stop offset="1" stop-color="#F8E0AF"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgsky)"/>
+      <circle cx="780" cy="500" r="60" fill="#FFF6D6"/>
+      <rect y="540" width="1200" height="260" fill="#0E1B2C"/>
+      <text x="600" y="420" text-anchor="middle"
+            font-family="'DM Serif Display', Georgia, serif"
+            font-size="160" letter-spacing="-4" fill="#F5F1E8">
+        Get <tspan font-style="italic" fill="#F5F1E8">Inspired.</tspan>
+      </text>
+    </svg>
+  </template>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body), system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      transition: background 320ms ease, color 320ms ease;
+    }
+    ::selection { background: var(--accent); color: var(--bg); }
+    .display { font-family: var(--font-display), serif; font-weight: 400; }
+    .ital { font-style: italic; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    .eyebrow {
+      font-family: var(--font-body), sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+    .hairline { border: 0; border-top: 0.5px solid var(--rule); margin: 0; }
+    a { color: inherit; }
+    button { font: inherit; }
+
+    .ph {
+      position: relative;
+      background:
+        repeating-linear-gradient(135deg, var(--ph-stripe) 0 1px, transparent 1px 8px),
+        var(--ph-bg);
+      color: var(--ink-2);
+      overflow: hidden;
+    }
+    .ph::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 14px; bottom: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      opacity: 0.7;
+    }
+    html, body { scroll-behavior: smooth; }
+  </style>
+</head>
+<body style="background-color: rgb(154, 114, 53)">
+  <div id="root"></div>
+
+  <script>
+    window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "variation": "A",
+      "palette": "ivory",
+      "typePairing": "editorial",
+      "heroTreatment": "cover",
+      "density": "regular",
+      "showGrid": false
+    }/*EDITMODE-END*/;
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="riviera.jsx"></script>
+  <script type="text/babel" src="sections-standalone.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

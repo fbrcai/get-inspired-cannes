@@ -122,6 +122,18 @@ function HeroCover({ t }) {
       }}>
         {/* Centerpiece */}
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: 'clamp(16px, 2vw, 28px)', paddingBottom: 'clamp(20px, 3vw, 40px)' }}>
+          <img
+            src="assets/cannes-lions-logo.png"
+            alt="Cannes Lions"
+            style={{
+              height: 'clamp(48px, 6vw, 80px)',
+              width: 'auto',
+              filter: 'invert(1) brightness(1.8)',
+              opacity: 0.92,
+              display: 'block',
+            }}
+          />
+
           <div className="eyebrow" style={{ color: 'var(--hero-fg)', opacity: 0.9 }}>
             <span style={{ display: 'inline-block', marginRight: 14 }}>Cannes Lions 2026</span>
             <span style={{ opacity: 0.6 }}>·</span>
@@ -217,6 +229,16 @@ function HeroTypeFirst({ t }) {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 'clamp(20px, 3vw, 40px)' }}>
+        <img
+          src="assets/cannes-lions-logo.png"
+          alt="Cannes Lions"
+          style={{
+            height: 'clamp(40px, 5vw, 68px)',
+            width: 'auto',
+            display: 'block',
+            opacity: 0.85,
+          }}
+        />
         <SectionLabel index={0} label="An invitation, before a programme" />
         <h1 style={{
           margin: 0,
@@ -297,6 +319,16 @@ function HeroSplit({ t }) {
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: 'clamp(28px, 5vw, 72px)', gap: 'clamp(16px, 2vw, 28px)'
       }}>
+        <img
+          src="assets/cannes-lions-logo.png"
+          alt="Cannes Lions"
+          style={{
+            height: 'clamp(40px, 5vw, 68px)',
+            width: 'auto',
+            display: 'block',
+            opacity: 0.85,
+          }}
+        />
         <SectionLabel index={0} label="Cannes Lions 2026 · Aboard" />
         <h1 style={{
           margin: 0, fontFamily: 'var(--font-display), serif', fontWeight: 400,
