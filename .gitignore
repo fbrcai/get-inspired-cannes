@@ -1,8 +1,26 @@
+# dependencies
 node_modules/
+
+# next.js
 .next/
+out/
+build/
+next-env.d.ts
+
+# vercel
 .vercel/
+
+# env / secrets
 .env
 .env.local
 .env*.local
+
+# generated landing copy (built from index.html via `npm run sync-landing`)
+public/landing.html
+
+# misc
 .DS_Store
 *.log
+
+# internal planning (not site code)
+WEBSITE_STRATEGY.md

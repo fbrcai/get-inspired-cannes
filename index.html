@@ -97,10 +97,10 @@
       overflow: hidden;
       isolation: isolate;
       color: var(--white);
-      /* Hero photo: Monaco harbour, French Riviera (Todor Andonov / Unsplash). */
+      /* Hero photo: superyachts in Monaco harbour, French Riviera (Todor Andonov / Unsplash). */
       background:
-        linear-gradient(180deg, rgba(10,14,22,0.55) 0%, rgba(10,14,22,0.35) 35%, rgba(10,14,22,0.85) 100%),
-        url('https://images.unsplash.com/photo-1775822993886-bb598906bca3?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat,
+        linear-gradient(180deg, rgba(10,14,22,0.45) 0%, rgba(10,14,22,0.30) 30%, rgba(10,14,22,0.88) 100%),
+        url('https://images.unsplash.com/photo-1775736310547-5d502fbcf805?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat,
         var(--navy);
     }
 
@@ -432,6 +432,8 @@
     .agenda-card.is-feature .agenda-title { color: var(--white); }
     .agenda-card.is-feature .agenda-body { color: rgba(253,250,246,0.75); }
     .agenda-card.is-feature .agenda-day { color: var(--gold-light); }
+
+    .agenda-card.is-wide { grid-column: 1 / -1; }
 
     /* ─── EMAIL CTA INLINE ───────────────────────────────── */
     .email-cta {
@@ -852,6 +854,18 @@
       line-height: 1.6;
     }
 
+    /* Prominent capture section */
+    .get-involved { padding-top: 128px; padding-bottom: 128px; }
+    .get-involved .section-title { font-size: clamp(42px, 5.5vw, 80px); }
+    .get-involved-desc { font-size: 17px; max-width: 460px; }
+    .form-wrapper {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 173, 116, 0.28);
+      padding: 44px 40px;
+      margin-top: 0;
+    }
+    .form-title { font-size: 26px; }
+
     /* ─── FOOTER ──────────────────────────────────────────── */
     footer {
       background: var(--ink);
@@ -925,6 +939,7 @@
       .who-header { grid-template-columns: 1fr; gap: 32px; align-items: start; }
 
       footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+      .form-wrapper { padding: 32px 24px; }
     }
 
     @media (max-width: 1100px) {
@@ -943,7 +958,7 @@
   <!-- HEADER -->
   <header>
     <a href="#" class="logo">GET <span>INSPIRED</span></a>
-    <a href="#get-involved" class="header-cta">Get involved</a>
+    <a href="#get-involved" class="header-cta">Request an invite</a>
   </header>
 
 
@@ -953,12 +968,12 @@
       <div class="hero-eyebrow">Cannes Lions 2026 &nbsp;·&nbsp; June 22–26</div>
       <h1 class="hero-title">GET<br/><em>INSPIRED</em></h1>
       <p class="hero-tagline">
-        A first-of-its-kind impact initiative<br/>during Cannes Lions.
+        Five days aboard a Super Yacht on the French Riviera —<br/>a first-of-its-kind impact initiative during Cannes Lions.
       </p>
 
       <div class="hero-meta">
         <div class="hero-actions">
-          <a href="mailto:fmcpartnerships@franchisemediacollective.com?subject=Get%20Inspired%20%E2%80%94%20I%27d%20like%20to%20get%20involved" class="btn-primary">Get involved →</a>
+          <a href="#get-involved" class="btn-primary">Request an invite →</a>
           <span class="hero-date">Aboard a Super Yacht &nbsp;·&nbsp; French Riviera &nbsp;·&nbsp; June 22–26</span>
         </div>
       </div>
@@ -980,43 +995,12 @@
   <div class="gold-rule"></div>
 
 
-  <!-- IMPACT -->
-  <section class="impact" id="impact">
-    <div class="impact-inner">
-      <div>
-        <div class="section-label">The Initiative</div>
-        <div class="impact-figure">$500K</div>
-        <div class="impact-figure-sub">to causes that matter — chosen by you</div>
-        <p class="impact-body">
-          Get Inspired is a first-of-its-kind impact initiative during Cannes Lions.
-          Every guest aboard is empowered to direct funds toward a charity of their
-          choice on the INSPIRED.com platform — turning the festival's most influential
-          week into measurable, collective good.
-        </p>
-        <div class="impact-partner">
-          <span>Launch media partner</span>
-          <strong>Adweek</strong>
-        </div>
-      </div>
-      <div>
-        <h2 class="impact-headline">
-          Attention becomes <em>action.</em><br/>
-          Culture moves the <em>causes</em> you care about.
-        </h2>
-      </div>
-    </div>
-  </section>
-
-
-  <div class="gold-rule"></div>
-
-
   <!-- AGENDA -->
   <section class="agenda" id="agenda">
     <div class="agenda-inner">
       <div class="agenda-header">
         <div>
-          <div class="section-label">02 — Agenda</div>
+          <div class="section-label">01 — Agenda</div>
           <h2 class="section-title">Five days,<br/>one <em>Super Yacht.</em></h2>
         </div>
         <p>
@@ -1029,7 +1013,7 @@
       <div class="agenda-grid">
 
         <div class="agenda-card">
-          <div class="agenda-day">Monday</div>
+          <div class="agenda-day">Monday · June 22</div>
           <div class="agenda-title">The Future of Power</div>
           <p class="agenda-body">
             AI, attention, influence, and the shifting dynamics reshaping every
@@ -1039,7 +1023,7 @@
         </div>
 
         <div class="agenda-card">
-          <div class="agenda-day">Tuesday</div>
+          <div class="agenda-day">Tuesday · June 23</div>
           <div class="agenda-title">The New Creative Economy</div>
           <p class="agenda-body">
             Creators, brands, monetisation, and the mechanics of cultural relevance
@@ -1048,16 +1032,7 @@
         </div>
 
         <div class="agenda-card">
-          <div class="agenda-day">Tuesday / Wednesday Evening</div>
-          <div class="agenda-title">Get Inspired Celebration</div>
-          <p class="agenda-body">
-            A curated, invite-only gathering celebrating the collective impact
-            created throughout the week.
-          </p>
-        </div>
-
-        <div class="agenda-card">
-          <div class="agenda-day">Wednesday</div>
+          <div class="agenda-day">Wednesday · June 24</div>
           <div class="agenda-title">Closed-Door Conversations</div>
           <p class="agenda-body">
             High-trust, invite-only sessions where leaders discuss what's
@@ -1065,139 +1040,28 @@
           </p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-
-  <div class="gold-rule"></div>
-
-
-  <!-- WHAT -->
-  <section class="what" id="what">
-    <div class="what-inner">
-      <div class="section-label">03 — What</div>
-      <div class="what-grid">
-        <div class="what-lead">
-          A space deliberately designed to slow<br/>
-          the pace of Cannes — <em>where the best<br/>
-          conversations happen on the water.</em>
-        </div>
-        <div class="what-details">
-          <div class="what-item">
-            <div class="what-item-number">01</div>
-            <h3>Curated Sessions</h3>
-            <p>Small-group conversations with senior marketers, platform leaders, and emerging creative voices. No stages. No slides. Just dialogue.</p>
-          </div>
-          <div class="what-item">
-            <div class="what-item-number">02</div>
-            <h3>Aboard the Yacht</h3>
-            <p>Set on the Mediterranean across five days of Cannes Lions, the yacht provides a private retreat from the festival floor — with views to match.</p>
-          </div>
-          <div class="what-item">
-            <div class="what-item-number">03</div>
-            <h3>Invite Only</h3>
-            <p>Attendance is limited to ensure every interaction is meaningful. Each guest is personally selected to create the right room.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="gold-rule"></div>
-
-
-  <!-- WHO -->
-  <section class="who" id="who">
-    <div class="who-inner">
-      <div class="who-header">
-        <div>
-          <div class="section-label">04 — Who</div>
-          <h2 class="section-title">The people<br/>on board</h2>
-        </div>
-        <p class="who-subtitle">
-          A hand-picked group of leaders who shape how brands and
-          culture move — from CMOs to creators, founders to platform builders.
-        </p>
-      </div>
-
-      <div class="people-grid">
-
-        <div class="person-card">
-          <div class="person-avatar">WL</div>
-          <div class="person-name">Will Lee</div>
-          <div class="person-title">CEO</div>
-          <div class="person-company">Adweek</div>
-          <p class="person-bio">Leads the global media brand at the intersection of marketing, media, and technology.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
+        <div class="agenda-card is-feature">
+          <div class="agenda-day">Thursday · June 25</div>
+          <div class="agenda-title">The Get Inspired Celebration</div>
+          <p class="agenda-body">
+            A curated, invite-only gathering celebrating the collective impact
+            created throughout the week.
+          </p>
         </div>
 
-        <div class="person-card">
-          <div class="person-avatar">AY</div>
-          <div class="person-name">Allison Yazdian</div>
-          <div class="person-title">CEO</div>
-          <div class="person-company">Uscreen</div>
-          <p class="person-bio">Builds the leading video membership platform powering creator-led subscription businesses.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
-        </div>
-
-        <div class="person-card">
-          <div class="person-avatar">RB</div>
-          <div class="person-name">Rich Battista</div>
-          <div class="person-title">Chairman</div>
-          <div class="person-company">Adweek</div>
-          <p class="person-bio">Veteran media executive guiding Adweek's growth across events, data, and content.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
-        </div>
-
-        <div class="person-card">
-          <div class="person-avatar">DM</div>
-          <div class="person-name">Dan Miller</div>
-          <div class="person-title">Managing Partner</div>
-          <div class="person-company">Raine</div>
-          <p class="person-bio">Senior investment leader backing high-growth companies in media, sports, and technology.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
-        </div>
-
-        <div class="person-card">
-          <div class="person-avatar">CD</div>
-          <div class="person-name">Chris Detert</div>
-          <div class="person-title">Co-Founder &amp; CCO</div>
-          <div class="person-company">Influential</div>
-          <p class="person-bio">Drives AI-powered creator and influencer marketing for the world's biggest brands.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
-        </div>
-
-        <div class="person-card">
-          <div class="person-avatar">BI</div>
-          <div class="person-name">Bill Imada</div>
-          <div class="person-title">Chair &amp; Co-Founder</div>
-          <div class="person-company">IW Group</div>
-          <p class="person-bio">Champion of multicultural marketing and community impact for global clients.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
-        </div>
-
-        <div class="person-card">
-          <div class="person-avatar">NW</div>
-          <div class="person-name">Neil Waller</div>
-          <div class="person-title">Co-Founder &amp; CEO</div>
-          <div class="person-company">Whalar</div>
-          <p class="person-bio">Scales a new breed of creator media and marketing company.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
-        </div>
-
-        <div class="person-card">
-          <div class="person-avatar">AG</div>
-          <div class="person-name">Andrew Graham</div>
-          <div class="person-title">Agent &amp; Co-Head of Digital Media</div>
-          <div class="person-company">CAA</div>
-          <p class="person-bio">Represents leading digital creators and media innovators worldwide.</p>
-          <a href="#" class="person-link">LinkedIn ↗</a>
+        <div class="agenda-card is-wide">
+          <div class="agenda-day">Friday · June 26</div>
+          <div class="agenda-title">Anchored in Purpose</div>
+          <p class="agenda-body">
+            A closing day on the water — reflections, commitments, and the
+            connections that outlast the festival.
+          </p>
         </div>
 
       </div>
     </div>
   </section>
+
 
   <div class="gold-rule"></div>
 
@@ -1207,12 +1071,12 @@
     <div class="get-involved-inner">
 
       <div>
-        <div class="section-label">05 — Get Involved</div>
-        <h2 class="section-title">Want to be<br/>part of it?</h2>
+        <div class="section-label">02 — Request an Invite</div>
+        <h2 class="section-title">Request your<br/>invite aboard.</h2>
         <p class="get-involved-desc">
-          There are a few ways to be part of Get Inspired at Cannes Lions 2026 —
-          as a guest, partner, or session host. Space is limited and curated.
-          Reach out and we'll discuss what's right for you.
+          A few ways to join Get Inspired at Cannes Lions 2026 — as a guest,
+          partner, sponsor, or session host. Space aboard the yacht is limited
+          and curated. Tell us how you'd like to be involved and we'll be in touch.
         </p>
         <a href="mailto:fmcpartnerships@franchisemediacollective.com?subject=Get%20Inspired%20%E2%80%94%20I%27d%20like%20to%20get%20involved" class="email-cta" style="margin-top: 8px;">
           fmcpartnerships@franchisemediacollective.com →
@@ -1250,6 +1114,8 @@
               <option value="" disabled selected>Select an option</option>
               <option>Attending as a guest</option>
               <option>Partnership opportunities</option>
+              <option>Sponsorship opportunities</option>
+              <option>VIP hosting / yacht activation</option>
               <option>Hosting a session</option>
               <option>Other</option>
             </select>
@@ -1268,11 +1134,8 @@
     <div class="footer-logo">GET <span>INSPIRED</span> &nbsp; · &nbsp; FMC × FBRC.ai × INSPIRED</div>
     <div class="footer-meta">Cannes Lions · June 22–26, 2026 · French Riviera</div>
     <div class="footer-links">
-      <a href="#impact">Impact</a>
       <a href="#agenda">Agenda</a>
-      <a href="#what">What</a>
-      <a href="#who">Who</a>
-      <a href="#get-involved">Get Involved</a>
+      <a href="#get-involved">Request an Invite</a>
       <a href="mailto:fmcpartnerships@franchisemediacollective.com">Contact</a>
     </div>
   </footer>
