@@ -6,9 +6,10 @@ Landing page for the **Get Inspired** initiative at Cannes Lions 2026 — a 5-da
 
 Three sections:
 
-1. **Hero** — French Riviera scene, three treatments (Cover / Type-first / Split)
-2. **Agenda** — 5-day programme, two layouts (Editorial / Timeline)
-3. **Request an Invite** — capture form, two layouts (Dispatch / Letterpress)
+1. **Hero** — French Riviera scene with Cannes lion + "Official Cannes Lions Partner" badge; three treatments (Cover / Type-first / Split)
+2. **The Week** — themed highlights (World Cup, Get Inspired Celebration, themes)
+3. **Get Involved** — 4 opportunity cards (VIP hosting, yacht activations, sponsor & programming, guest attendance) that deep-link to the Invite form with the right interest pre-selected
+4. **Request an Invite** — capture form, two layouts (Dispatch / Letterpress)
 
 A floating **Tweaks** panel exposes variation, hero treatment, type pairing, palette, density.
 
@@ -17,7 +18,7 @@ A floating **Tweaks** panel exposes variation, hero treatment, type pairing, pal
 ```
 index.html              Entry point — loads React, Babel, fonts, and the JSX modules
 app.jsx                 Root component, theme/palette + type pairing, Tweaks panel
-sections.jsx            Hero / Agenda / Invite components (all variations)
+sections.jsx            Hero / The Week / Get Involved / Invite components (all variations)
 riviera.jsx             SVG fallback Riviera scene (currently unused — photo is on)
 tweaks-panel.jsx        Tweaks panel shell + form-control helpers
 
@@ -26,8 +27,8 @@ Inspired (standalone source).html   Source for the offline bundle (rewritten to 
 sections-standalone.jsx             Auto-generated companion for the offline source
 Get Inspired.html                   Pre-built standalone HTML (3.3 MB, fully offline)
 
-assets/                 Local images
-uploads/                Raw uploads (Cannes-Event.jpg)
+assets/                 Local images — Cannes lion logo, hero photo
+uploads/                Raw uploads
 ```
 
 ## Running locally

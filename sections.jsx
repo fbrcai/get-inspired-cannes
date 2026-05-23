@@ -1,55 +1,76 @@
 // sections.jsx — Hero / Agenda / Invite, two variations on Agenda + Invite.
 
 // ─── Shared ────────────────────────────────────────────────────────────────
-const AGENDA = [
-{
-  day: 'Monday',
-  date: 'June 22',
-  title: 'The Future of Power',
-  blurb: 'AI, attention, influence, and the shifting dynamics reshaping every corner of our industry.',
-  aside: 'World Cup · Argentina v. Austria · France v. Iraq',
-  tag: 'Curated session'
-},
-{
-  day: 'Tuesday',
-  date: 'June 23',
-  title: 'The New Creative Economy',
-  blurb: 'Creators, brands, monetisation, and the mechanics of cultural relevance in a post-platform world.',
-  aside: 'Daytime programme',
-  tag: 'Curated session'
-},
-{
-  day: 'Tuesday',
-  date: 'Evening',
-  title: 'Get Inspired Celebration',
-  blurb: 'A curated, invite-only gathering celebrating the collective impact created throughout the week.',
-  aside: 'Sunset',
-  tag: 'Signature evening'
-},
-{
-  day: 'Wednesday',
-  date: 'June 24',
-  title: 'Closed-Door Conversations',
-  blurb: 'High-trust, invite-only sessions where leaders discuss what is rarely said publicly.',
-  aside: 'Off the record',
-  tag: 'Off the record'
-},
-{
-  day: 'Thursday',
-  date: 'June 25',
-  title: 'The Work that Moves Culture',
-  blurb: 'A working roundtable on the campaigns and ideas reshaping how brands earn attention.',
-  aside: 'Working session · invited only',
-  tag: 'Curated session'
-},
-{
-  day: 'Friday',
-  date: 'June 26',
-  title: 'Final Reflections, At Sea',
-  blurb: 'Rose and ... ',
-  aside: 'Touch Grass',
-  tag: 'Closing'
-}];
+
+// Highlights of the week — themes + signature moments. Not a confirmed daily schedule.
+const HIGHLIGHTS = [
+  {
+    when: 'Mon · 22 Jun',
+    kind: 'Live · On Deck',
+    title: 'World Cup, Aboard',
+    detail: 'Argentina v. Austria · France v. Iraq ',
+    accent: true,
+  },
+  {
+    when: 'Mon — Wed',
+    kind: 'Theme',
+    title: 'The Future of Power',
+    detail: 'AI, attention, influence — and the shifting dynamics reshaping the industry.',
+  },
+  {
+    when: 'Tue · 23 Jun',
+    kind: 'Signature Evening',
+    title: 'Get Inspired Celebration',
+    detail: 'Our flagship invite-only gathering — sunset, music, the room together.',
+    accent: true,
+  },
+  {
+    when: 'Wed — Thu',
+    kind: 'Theme',
+    title: 'The New Creative Economy',
+    detail: 'Creators, brands, monetisation, and the mechanics of cultural relevance.',
+  },
+];
+
+// Ways to engage — partner / sponsor / activate / host / attend.
+const OPPORTUNITIES = [
+  {
+    n: '01',
+    kind: 'For Brands & Hosts',
+    title: 'VIP Hosting',
+    detail:
+      'Curate your own delegation. Host a private breakfast, lunch, or dinner aboard for your clients, partners, or invited guests.',
+    cta: 'Discuss hosting',
+    interest: 'VIP hosting opportunity',
+  },
+  {
+    n: '02',
+    kind: 'For Brands & Agencies',
+    title: 'Yacht Activations',
+    detail:
+      'Use the yacht as a canvas — installations, launches, demos, takeovers. High-touch, high-trust, walking distance from the Palais.',
+    cta: 'Discuss an activation',
+    interest: 'Yacht activation / brand presence',
+  },
+  {
+    n: '03',
+    kind: 'For Partners',
+    title: 'Sponsor & Programming',
+    detail:
+      'Sponsor a theme, session, or evening. Co-create programming alongside our editorial partners and senior conveners.',
+    cta: 'Discuss partnership',
+    interest: 'Sponsorship / programming partner',
+  },
+  {
+    n: '04',
+    kind: 'For Individuals',
+    title: 'Guest Attendance',
+    detail:
+      'Join as an invited guest. A small, hand-picked room of leaders shaping how brands and culture move.',
+    cta: 'Request a guest invite',
+    interest: 'Attending as a guest',
+  },
+];
 
 
 const SectionLabel = ({ index, label }) =>
@@ -116,32 +137,54 @@ function HeroCover({ t }) {
 
       <div style={{
         position: 'relative', minHeight: '100vh',
-        display: 'grid', gridTemplateRows: '1fr auto',
+        display: 'grid', gridTemplateRows: 'auto 1fr auto',
         padding: 'clamp(20px, 3vw, 36px) clamp(20px, 4vw, 56px)',
         color: 'var(--hero-fg)'
       }}>
-        {/* Centerpiece */}
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: 'clamp(16px, 2vw, 28px)', paddingBottom: 'clamp(20px, 3vw, 40px)' }}>
-          <img
-            src="assets/cannes-lions-logo.png"
-            alt="Cannes Lions"
-            style={{
-              height: 'clamp(48px, 6vw, 80px)',
-              width: 'auto',
-              filter: 'invert(1) brightness(1.8)',
-              opacity: 0.92,
-              display: 'block',
-            }}
-          />
-
-          <div className="eyebrow" style={{ color: 'var(--hero-fg)', opacity: 0.9 }}>
-            <span style={{ display: 'inline-block', marginRight: 14 }}>Cannes Lions 2026</span>
-            <span style={{ opacity: 0.6 }}>·</span>
-            <span style={{ display: 'inline-block', margin: '0 14px' }}>June 22 — 26</span>
-            <span style={{ opacity: 0.6 }}>·</span>
-            <span style={{ display: 'inline-block', marginLeft: 14 }}>ARE YOU READY?</span>
+        {/* Top header: logo + partner badge */}
+        <div className="r-hero-header" style={{
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          gap: 24, paddingTop: 4,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+            <img
+              src="assets/cannes-lions-logo.png"
+              alt="Cannes Lions"
+              style={{
+                width: 'clamp(44px, 4.4vw, 64px)',
+                height: 'auto',
+                filter: 'brightness(0) invert(1)',
+                opacity: 0.92,
+              }}
+            />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+              <span className="mono" style={{
+                fontSize: 10.5, letterSpacing: '0.18em', textTransform: 'uppercase',
+                color: 'var(--accent)', fontWeight: 600,
+              }}>
+                Official Cannes Lions Partner
+              </span>
+              <span className="mono" style={{
+                fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase',
+                color: 'var(--hero-fg)', opacity: 0.78,
+              }}>
+                Cannes Lions 2026 · 22 — 26 June
+              </span>
+            </div>
           </div>
+          <a href="#invite" className="r-hero-nav-cta" style={{
+            textDecoration: 'none', color: 'var(--hero-fg)',
+            border: '0.5px solid currentColor', borderRadius: 999,
+            padding: '10px 16px', fontSize: 11, letterSpacing: '0.14em',
+            textTransform: 'uppercase', whiteSpace: 'nowrap',
+            display: 'inline-flex', alignItems: 'center', gap: 10, opacity: 0.92,
+          }}>
+            Get involved →
+          </a>
+        </div>
 
+        {/* Centerpiece */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: 'clamp(16px, 2vw, 28px)', paddingBottom: 'clamp(8px, 1.5vw, 20px)' }}>
           <h1 style={{
             margin: 0,
             fontFamily: 'var(--font-display), serif',
@@ -163,7 +206,7 @@ function HeroCover({ t }) {
               margin: 0, maxWidth: 560, fontSize: 'clamp(20px, 1.9vw, 30px)',
               lineHeight: 1.25, fontStyle: 'italic', color: 'var(--hero-fg)', opacity: 0.95
             }}>
-              A first-of-its-kind impact initiative during Cannes Lions.<br />
+              A first-of-its-kind impact initiative during Cannes Lions.
             </p>
             <a
               href="#invite"
@@ -187,8 +230,8 @@ function HeroCover({ t }) {
           color: 'var(--hero-fg)', opacity: 0.92
         }}>
           <Stat label="Hosted by" value="FMC × FBRC.ai × INSPIRED" />
-          <Stat label="Vessel" value="Super Yacht · Vieux Port" />
-          <Stat label="Programme" value="5 days curated" />
+          <Stat label="Vessel" value="Yacht · Vieux Port" />
+          <Stat label="Location" value="Walking distance from the Palais" />
           <Stat label="Attendance" value="By invitation" emph />
         </div>
       </div>
@@ -229,16 +272,6 @@ function HeroTypeFirst({ t }) {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 'clamp(20px, 3vw, 40px)' }}>
-        <img
-          src="assets/cannes-lions-logo.png"
-          alt="Cannes Lions"
-          style={{
-            height: 'clamp(40px, 5vw, 68px)',
-            width: 'auto',
-            display: 'block',
-            opacity: 0.85,
-          }}
-        />
         <SectionLabel index={0} label="An invitation, before a programme" />
         <h1 style={{
           margin: 0,
@@ -319,16 +352,6 @@ function HeroSplit({ t }) {
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: 'clamp(28px, 5vw, 72px)', gap: 'clamp(16px, 2vw, 28px)'
       }}>
-        <img
-          src="assets/cannes-lions-logo.png"
-          alt="Cannes Lions"
-          style={{
-            height: 'clamp(40px, 5vw, 68px)',
-            width: 'auto',
-            display: 'block',
-            opacity: 0.85,
-          }}
-        />
         <SectionLabel index={0} label="Cannes Lions 2026 · Aboard" />
         <h1 style={{
           margin: 0, fontFamily: 'var(--font-display), serif', fontWeight: 400,
@@ -353,24 +376,125 @@ function HeroSplit({ t }) {
 
 }
 
-// ─── AGENDA ────────────────────────────────────────────────────────────────
+// ─── THE WEEK + OPPORTUNITIES ──────────────────────────────────────────────
 
+// Wrapper that renders both subsections — keeps the public Agenda contract.
 function Agenda({ t }) {
-  return t.variation === 'B' ? <AgendaTimeline t={t} /> : <AgendaEditorial t={t} />;
+  return (
+    <React.Fragment>
+      <TheWeek t={t} />
+      <Opportunities t={t} />
+    </React.Fragment>);
 }
 
-// A — Editorial schedule: day-on-left, session-on-right list
-function AgendaEditorial({ t }) {
+// ── THE WEEK ──────────────────────────────────────────────────────────────
+function TheWeek({ t }) {
   return (
     <section
-      id="agenda"
-      data-screen-label="02 Agenda · Editorial"
+      id="week"
+      data-screen-label="02 The Week"
       style={{
         background: 'var(--bg-2)', color: 'var(--ink)',
         padding: 'clamp(48px, 8vw, 120px) clamp(20px, 4vw, 56px)'
       }}>
       <div style={{ maxWidth: 1480, margin: '0 auto' }}>
-        <SectionLabel index={2} label="Agenda" />
+        <SectionLabel index={2} label="The Week · Highlights" />
+
+        <div className="r-grid-2" style={{
+          display: 'grid', gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 1fr)',
+          gap: 'clamp(20px, 4vw, 60px)', alignItems: 'end',
+          margin: 'clamp(24px, 4vw, 56px) 0 clamp(36px, 5vw, 64px)'
+        }}>
+          <h2 className="display" style={{
+            margin: 0, fontWeight: 400,
+            fontSize: 'clamp(48px, 6.5vw, 110px)',
+            lineHeight: 0.94, letterSpacing: '-0.02em'
+          }}>
+            Five days,<br />one <em style={{ color: 'var(--accent)' }}>super yacht.</em>
+          </h2>
+          <p style={{
+            margin: 0, fontSize: 16, lineHeight: 1.55, color: 'var(--ink-2)',
+            maxWidth: 50 + 'ch', paddingBottom: 12,
+          }}>
+            A focused programme of themed days, signature moments, and a few live ones
+            we wouldn't miss — anchored by one question: how do we move culture forward, on purpose?
+          </p>
+        </div>
+
+        <div className="r-week-grid" style={{
+          display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: 'clamp(14px, 1.6vw, 22px)',
+        }}>
+          {HIGHLIGHTS.map((h, i) => <HighlightCard key={h.title} h={h} i={i} />)}
+        </div>
+      </div>
+    </section>);
+}
+
+function HighlightCard({ h, i }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <article
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        position: 'relative',
+        background: h.accent ? 'var(--card)' : 'transparent',
+        border: '0.5px solid var(--rule)',
+        borderColor: hover ? 'var(--accent)' : 'var(--rule)',
+        borderRadius: 4,
+        padding: 'clamp(22px, 2.4vw, 32px)',
+        display: 'flex', flexDirection: 'column', gap: 14,
+        minHeight: 220,
+        transition: 'border-color 240ms ease, transform 240ms ease',
+        transform: hover ? 'translateY(-2px)' : 'translateY(0)',
+      }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+        <span className="mono" style={{
+          fontSize: 10.5, letterSpacing: '0.16em', textTransform: 'uppercase',
+          color: 'var(--ink-2)',
+        }}>{h.when}</span>
+        <span className="mono" style={{
+          fontSize: 9.5, letterSpacing: '0.16em', textTransform: 'uppercase',
+          color: h.accent ? 'var(--accent)' : 'var(--ink-2)',
+          border: '0.5px solid currentColor', padding: '5px 9px', borderRadius: 999,
+        }}>{h.kind}</span>
+      </div>
+      <h3 className="display" style={{
+        margin: 0, fontWeight: 400,
+        fontSize: 'clamp(30px, 3.2vw, 46px)',
+        lineHeight: 1.02, letterSpacing: '-0.015em',
+        color: h.accent ? 'var(--ink)' : 'var(--ink)',
+      }}>
+        {h.accent ? <em style={{ color: 'var(--accent)' }}>{h.title}</em> : h.title}
+      </h3>
+      <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: 56 + 'ch' }}>
+        {h.detail}
+      </p>
+    </article>);
+}
+
+// ── OPPORTUNITIES ─────────────────────────────────────────────────────────
+function Opportunities({ t }) {
+  const goto = (interest) => () => {
+    try {
+      window.dispatchEvent(new CustomEvent('inspired:set-interest', { detail: interest }));
+    } catch (e) {}
+    const el = document.getElementById('invite');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  return (
+    <section
+      id="involved"
+      data-screen-label="03 Get Involved"
+      style={{
+        background: 'var(--bg-deep)', color: 'var(--bg)',
+        padding: 'clamp(56px, 9vw, 140px) clamp(20px, 4vw, 56px)',
+        position: 'relative', overflow: 'hidden',
+      }}>
+      <Grain />
+      <div style={{ maxWidth: 1480, margin: '0 auto', position: 'relative' }}>
+        <SectionLabel index={3} label="Get Involved" />
 
         <div className="r-grid-2" style={{
           display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)',
@@ -382,203 +506,86 @@ function AgendaEditorial({ t }) {
             fontSize: 'clamp(48px, 6.5vw, 110px)',
             lineHeight: 0.94, letterSpacing: '-0.02em'
           }}>
-            Five days,<br />one <em style={{ color: 'var(--accent)' }}>super yacht.</em>
+            Be <em style={{ color: 'var(--accent)' }}>part</em> of it.
           </h2>
-          <p style={{ margin: 0, fontSize: 16, lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: 50 + 'ch', paddingBottom: 12 }}>A focused programme of curated sessions, closed-door conversations, and a celebrations — anchored by one question:
-how do we move culture forward, on purpose?
-
-
+          <p style={{
+            margin: 0, fontSize: 16, lineHeight: 1.55, opacity: 0.88,
+            maxWidth: 52 + 'ch', paddingBottom: 12,
+          }}>
+            Brands, agencies, partners, and individuals shape Get Inspired together.
+            Four ways in — pick the one that fits, or tell us your own.
           </p>
         </div>
 
-        <ol style={{
-          listStyle: 'none', margin: 0, padding: 0,
-          borderTop: '0.5px solid var(--rule)'
+        <div className="r-opps-grid" style={{
+          display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: 'clamp(14px, 1.4vw, 18px)',
         }}>
-          {AGENDA.map((s, i) =>
-          <AgendaRow key={s.title} s={s} i={i} />
-          )}
-        </ol>
-      </div>
-    </section>);
-
-}
-
-function AgendaRow({ s, i }) {
-  const [hover, setHover] = React.useState(false);
-  return (
-    <li
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '64px minmax(0, 200px) minmax(0, 2.4fr) minmax(0, 1fr)',
-        gap: 'clamp(20px, 3vw, 48px)',
-        padding: 'clamp(22px, 3vw, 36px) 4px',
-        borderBottom: '0.5px solid var(--rule)',
-        alignItems: 'baseline',
-        transition: 'padding 240ms ease, background 240ms ease',
-        background: hover ? 'var(--card)' : 'transparent',
-        paddingLeft: hover ? 18 : 4
-      }}
-      className="r-agenda-row">
-      <span className="mono" style={{ fontSize: 11, letterSpacing: '0.14em', color: 'var(--ink-2)' }}>
-        {String(i + 1).padStart(2, '0')}
-      </span>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-        <span className="display ital" style={{
-          fontSize: 'clamp(24px, 2.4vw, 32px)', lineHeight: 1.05,
-          color: hover ? 'var(--accent)' : 'var(--ink)',
-          transition: 'color 220ms ease'
-        }}>{s.day}</span>
-        <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.14em', color: 'var(--ink-2)' }}>
-          {s.date}
-        </span>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-        <h3 className="display" style={{
-          margin: 0, fontWeight: 400,
-          fontSize: 'clamp(28px, 3vw, 44px)',
-          lineHeight: 1.05, letterSpacing: '-0.01em'
-        }}>{s.title}</h3>
-        <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: 'var(--ink-2)', maxWidth: 60 + 'ch' }}>
-          {s.blurb}
-        </p>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'flex-end', textAlign: 'right' }}>
-        <span className="mono" style={{
-          fontSize: 9.5, letterSpacing: '0.16em', textTransform: 'uppercase',
-          color: 'var(--accent)', border: '0.5px solid currentColor',
-          padding: '6px 10px', borderRadius: 999
-        }}>{s.tag}</span>
-        <span className="mono" style={{ fontSize: 11, color: 'var(--ink-2)', letterSpacing: '0.06em' }}>
-          {s.aside}
-        </span>
-      </div>
-    </li>);
-
-}
-
-// B — Timeline: vertical river-of-days with markers; sticky day header on hover
-function AgendaTimeline({ t }) {
-  const [active, setActive] = React.useState(0);
-  const a = AGENDA[active];
-  return (
-    <section
-      id="agenda"
-      data-screen-label="02 Agenda · Timeline"
-      style={{
-        background: 'var(--bg-deep)', color: 'var(--bg)',
-        padding: 'clamp(56px, 9vw, 140px) clamp(20px, 4vw, 56px)',
-        position: 'relative', overflow: 'hidden'
-      }}>
-      <Grain />
-      <div style={{ maxWidth: 1480, margin: '0 auto', position: 'relative' }}>
-        <SectionLabel index={2} label="Agenda · A river of days" />
-
-        <h2 className="display" style={{
-          margin: 'clamp(24px, 4vw, 56px) 0 0',
-          fontWeight: 400,
-          fontSize: 'clamp(48px, 7vw, 120px)',
-          lineHeight: 0.94, letterSpacing: '-0.02em'
-        }}>
-          Five days,<br />one <em style={{ color: 'var(--accent)' }}>super yacht.</em>
-        </h2>
-
-        <div className="r-grid-2" style={{
-          display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.4fr)',
-          gap: 'clamp(24px, 4vw, 72px)',
-          marginTop: 'clamp(36px, 5vw, 64px)',
-          alignItems: 'start'
-        }}>
-          {/* Vertical timeline */}
-          <ol style={{ listStyle: 'none', margin: 0, padding: 0, position: 'relative' }}>
-            {/* vertical rail */}
-            <span aria-hidden style={{
-              position: 'absolute', left: 7, top: 8, bottom: 8,
-              width: 0.5, background: 'rgba(255,255,255,0.18)'
-            }} />
-            {AGENDA.map((s, i) => {
-              const isActive = i === active;
-              return (
-                <li
-                  key={s.title}
-                  onMouseEnter={() => setActive(i)}
-                  onClick={() => setActive(i)}
-                  style={{
-                    position: 'relative', paddingLeft: 36,
-                    padding: '14px 0 14px 36px',
-                    cursor: 'pointer',
-                    opacity: isActive ? 1 : 0.55,
-                    transition: 'opacity 200ms ease'
-                  }}>
-                  <span aria-hidden style={{
-                    position: 'absolute', left: 0, top: 22,
-                    width: 14, height: 14, borderRadius: '50%',
-                    background: isActive ? 'var(--accent)' : 'transparent',
-                    border: isActive ? 'none' : '0.5px solid rgba(255,255,255,0.4)',
-                    boxShadow: isActive ? '0 0 0 6px rgba(212,168,87,0.18)' : 'none',
-                    transition: 'all 220ms ease'
-                  }} />
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.16em', opacity: 0.7 }}>
-                      {s.date.toUpperCase()}
-                    </span>
-                    <span className="display" style={{
-                      fontSize: 'clamp(26px, 2.4vw, 36px)',
-                      lineHeight: 1.05,
-                      letterSpacing: '-0.01em',
-                      fontStyle: isActive ? 'italic' : 'normal',
-                      color: isActive ? 'var(--accent)' : 'inherit',
-                      transition: 'color 200ms ease'
-                    }}>{s.day} — {s.title}</span>
-                  </div>
-                </li>);
-
-            })}
-          </ol>
-
-          {/* Active session card */}
-          <aside style={{
-            position: 'sticky', top: 24,
-            border: '0.5px solid rgba(255,255,255,0.18)',
-            borderRadius: 6,
-            padding: 'clamp(24px, 3vw, 40px)',
-            background: 'rgba(255,255,255,0.03)',
-            backdropFilter: 'blur(4px)',
-            display: 'flex', flexDirection: 'column', gap: 18
-          }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-              <span className="mono" style={{ fontSize: 10.5, letterSpacing: '0.16em', opacity: 0.7 }}>
-                {a.date.toUpperCase()} · {a.day.toUpperCase()}
-              </span>
-              <span className="mono" style={{
-                fontSize: 9.5, letterSpacing: '0.16em', textTransform: 'uppercase',
-                color: 'var(--accent)', border: '0.5px solid currentColor',
-                padding: '5px 10px', borderRadius: 999
-              }}>{a.tag}</span>
-            </div>
-            <h3 className="display" style={{
-              margin: 0, fontWeight: 400,
-              fontSize: 'clamp(40px, 4vw, 64px)',
-              lineHeight: 1, letterSpacing: '-0.015em'
-            }}>{a.title}</h3>
-            <p style={{ margin: 0, fontSize: 16, lineHeight: 1.55, opacity: 0.88, maxWidth: 56 + 'ch' }}>
-              {a.blurb}
-            </p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12,
-              paddingTop: 14, borderTop: '0.5px solid rgba(255,255,255,0.15)' }}>
-              <span className="mono" style={{ fontSize: 10, letterSpacing: '0.14em', opacity: 0.6 }}>
-                ON DECK
-              </span>
-              <span className="display ital" style={{ fontSize: 20 }}>{a.aside}</span>
-            </div>
-          </aside>
+          {OPPORTUNITIES.map((o) => <OpportunityCard key={o.title} o={o} goto={goto(o.interest)} />)}
         </div>
       </div>
     </section>);
+}
 
+function OpportunityCard({ o, goto }) {
+  const [hover, setHover] = React.useState(false);
+  return (
+    <article
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        position: 'relative',
+        display: 'flex', flexDirection: 'column',
+        background: hover ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)',
+        border: '0.5px solid rgba(255,255,255,0.16)',
+        borderColor: hover ? 'var(--accent)' : 'rgba(255,255,255,0.16)',
+        borderRadius: 4,
+        padding: 'clamp(22px, 2.2vw, 32px)',
+        gap: 18,
+        minHeight: 360,
+        transition: 'border-color 240ms ease, background 240ms ease, transform 240ms ease',
+        transform: hover ? 'translateY(-3px)' : 'translateY(0)',
+      }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+        <span className="mono" style={{
+          fontSize: 11, letterSpacing: '0.14em', color: 'var(--accent)',
+        }}>{o.n}</span>
+        <span className="mono" style={{
+          fontSize: 9.5, letterSpacing: '0.16em', textTransform: 'uppercase',
+          opacity: 0.7,
+        }}>{o.kind}</span>
+      </div>
+
+      <h3 className="display" style={{
+        margin: '6px 0 0', fontWeight: 400,
+        fontSize: 'clamp(28px, 2.6vw, 36px)',
+        lineHeight: 1.02, letterSpacing: '-0.015em',
+        color: 'var(--bg)',
+      }}>{o.title}</h3>
+
+      <p style={{
+        margin: 0, fontSize: 14.5, lineHeight: 1.55, opacity: 0.86, flex: 1,
+      }}>{o.detail}</p>
+
+      <button
+        type="button"
+        onClick={goto}
+        style={{
+          appearance: 'none', border: 0, cursor: 'pointer',
+          alignSelf: 'flex-start',
+          background: hover ? 'var(--accent)' : 'transparent',
+          color: hover ? 'var(--ink)' : 'var(--bg)',
+          padding: '12px 20px', borderRadius: 999,
+          fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase',
+          fontWeight: 600,
+          border: '0.5px solid ' + (hover ? 'transparent' : 'rgba(255,255,255,0.4)'),
+          transition: 'all 220ms ease',
+          display: 'inline-flex', alignItems: 'center', gap: 10,
+        }}>
+        {o.cta}
+        <span aria-hidden style={{ fontSize: 13 }}>→</span>
+      </button>
+    </article>);
 }
 
 // ─── REQUEST AN INVITE ──────────────────────────────────────────────────────
@@ -588,9 +595,10 @@ function Invite({ t }) {
 }
 
 const INTERESTS = [
+'VIP hosting opportunity',
+'Yacht activation / brand presence',
+'Sponsorship / programming partner',
 'Attending as a guest',
-'Partnership opportunities',
-'Hosting a session',
 'Press / media',
 'Other'];
 
@@ -600,8 +608,21 @@ function useInviteForm() {
     first: '', last: '', email: '', company: '', role: '', interest: INTERESTS[0], note: ''
   });
   const [submitted, setSubmitted] = React.useState(false);
-  const update = (k) => (e) => setForm({ ...form, [k]: e.target ? e.target.value : e });
+  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target ? e.target.value : e }));
   const submit = (e) => {e.preventDefault();setSubmitted(true);};
+
+  // Listen for cross-section interest selection (from Opportunities cards)
+  React.useEffect(() => {
+    const onSet = (ev) => {
+      const v = ev && ev.detail;
+      if (typeof v === 'string' && INTERESTS.includes(v)) {
+        setForm((f) => ({ ...f, interest: v }));
+      }
+    };
+    window.addEventListener('inspired:set-interest', onSet);
+    return () => window.removeEventListener('inspired:set-interest', onSet);
+  }, []);
+
   return { form, update, submit, submitted };
 }
 
