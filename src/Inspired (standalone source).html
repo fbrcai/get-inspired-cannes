@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GET INSPIRED — Cannes Lions 2026</title>
+
+  <meta name="description" content="A first-of-its-kind impact initiative aboard a super yacht on the French Riviera during Cannes Lions 2026. By invitation." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Get Inspired — Cannes Lions 2026" />
+  <meta property="og:description" content="A first-of-its-kind impact initiative aboard a super yacht on the French Riviera during Cannes Lions 2026. By invitation." />
+  <meta property="og:url" content="https://inspiredcannes.com/" />
+  <meta property="og:image" content="https://inspiredcannes.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Get Inspired — Cannes Lions 2026, super yachts on the French Riviera" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Get Inspired — Cannes Lions 2026" />
+  <meta name="twitter:description" content="A first-of-its-kind impact initiative aboard a super yacht on the French Riviera. By invitation." />
+  <meta name="twitter:image" content="https://inspiredcannes.com/og.png" />
+
+  <meta name="ext-resource-dependency" content="../og.png" data-resource-id="ogImg" />
+
+  <meta name="ext-resource-dependency" content="https://images.unsplash.com/photo-1775822993886-bb598906bca3?auto=format&fit=crop&w=2400&q=80" data-resource-id="heroImg" />
+  <meta name="ext-resource-dependency" content="../assets/cannes-lions-stacked-white.png" data-resource-id="lionLogo" />
+  <meta name="ext-resource-dependency" content="../assets/press-photos.jpg" data-resource-id="pressPhotos" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&family=Manrope:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#0E1B2C">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgsky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1F2E48"/>
+          <stop offset="0.55" stop-color="#A56F62"/>
+          <stop offset="0.92" stop-color="#F4D199"/>
+          <stop offset="1" stop-color="#F8E0AF"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="800" fill="url(#bgsky)"/>
+      <circle cx="780" cy="500" r="60" fill="#FFF6D6"/>
+      <rect y="540" width="1200" height="260" fill="#0E1B2C"/>
+      <text x="600" y="420" text-anchor="middle"
+            font-family="'DM Serif Display', Georgia, serif"
+            font-size="160" letter-spacing="-4" fill="#F5F1E8">
+        Get <tspan font-style="italic" fill="#F5F1E8">Inspired.</tspan>
+      </text>
+    </svg>
+  </template>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body), system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      transition: background 320ms ease, color 320ms ease;
+    }
+    ::selection { background: var(--accent); color: var(--bg); }
+    .display { font-family: var(--font-display), serif; font-weight: 400; }
+    .ital { font-style: italic; }
+    .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+    .eyebrow {
+      font-family: var(--font-body), sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+    .hairline { border: 0; border-top: 0.5px solid var(--rule); margin: 0; }
+    a { color: inherit; }
+    button { font: inherit; }
+
+    .ph {
+      position: relative;
+      background:
+        repeating-linear-gradient(135deg, var(--ph-stripe) 0 1px, transparent 1px 8px),
+        var(--ph-bg);
+      color: var(--ink-2);
+      overflow: hidden;
+    }
+    .ph::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 14px; bottom: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      opacity: 0.7;
+    }
+    html, body { scroll-behavior: smooth; }
+
+    /* Pre-mount: keep the canvas dark so there's no flash before React renders */
+    html, body { background: #0B1626; }
+    body { color: #F5F1E8; }
+    #root:empty {
+      min-height: 100vh;
+      background: #0B1626;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .r-split { grid-template-columns: 1fr !important; }
+      .r-split-img { min-height: 60vh !important; max-height: 60vh; }
+      .r-agenda-row {
+        grid-template-columns: 36px 1fr !important;
+        row-gap: 14px !important;
+      }
+      .r-agenda-row > :nth-child(3),
+      .r-agenda-row > :nth-child(4) { grid-column: 2 !important; }
+      .r-agenda-row > :nth-child(4) {
+        align-items: flex-start !important;
+        text-align: left !important;
+      }
+      .r-invite-grid { grid-template-columns: 1fr !important; }
+      .r-invite-side { position: static !important; }
+      .r-press-feature { grid-template-columns: 1fr !important; }
+      .r-opps-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 640px) {
+      .r-grid-2 { grid-template-columns: 1fr !important; }
+      .r-grid-4 { grid-template-columns: 1fr 1fr !important; }
+      .r-field-row { grid-template-columns: 1fr !important; }
+      .r-hero-cta-row {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+      .r-hero-cta-row > a { width: 100%; justify-content: center; }
+      .r-hero-nav-cta { display: none !important; }
+      .r-footer {
+        grid-template-columns: 1fr !important;
+        align-items: start !important;
+        justify-items: center !important;
+        text-align: center !important;
+        gap: 22px !important;
+      }
+      .r-footer > div { align-items: center !important; }
+      .r-footer > a {
+        white-space: normal !important;
+        word-break: break-word !important;
+        text-align: center !important;
+        font-size: 10.5px !important;
+        letter-spacing: 0.08em !important;
+        padding: 14px 20px !important;
+      }
+      .r-week-grid { grid-template-columns: 1fr !important; }
+      .r-opps-grid { grid-template-columns: 1fr !important; }
+
+      /* Hero Cover — pack content, don't force a tall 100vh stretch */
+      .r-hero-cover { min-height: auto !important; }
+      .r-hero-cover > div:last-of-type { min-height: 100svh !important; }
+      .r-hero-centerpiece {
+        justify-content: flex-end !important;
+        padding-top: clamp(24px, 6vw, 48px) !important;
+        padding-bottom: clamp(28px, 7vw, 56px) !important;
+        gap: 18px !important;
+      }
+      .r-hero-cover h1 {
+        font-size: clamp(64px, 17vw, 100px) !important;
+        line-height: 0.92 !important;
+        text-shadow: 0 2px 24px rgba(8,10,18,0.35);
+      }
+      .r-hero-centerpiece p {
+        text-shadow: 0 1px 12px rgba(8,10,18,0.55);
+      }
+      /* Footer stats: comfortable 2x2, shrink the emphasized value */
+      .r-grid-4 { gap: 22px 18px !important; padding-top: 18px !important; }
+      .r-stat-emph { font-size: 15px !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "variation": "A",
+      "palette": "ivory",
+      "typePairing": "editorial",
+      "heroTreatment": "cover",
+      "density": "regular",
+      "showGrid": false
+    }/*EDITMODE-END*/;
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="riviera.jsx"></script>
+  <script type="text/babel" src="sections-standalone.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
